@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4"
+      lang="en">
+<head>
+    <!--/*/ <th:block th:include="fragments/inc-header :: head"></th:block> /*/-->
+    <title>MaxBit - Admin</title>
+</head>
+<body onload="init('Admin')">
+<!--/*/ <th:block th:include="fragments/navbar :: navbar"></th:block> /*/-->
+<div class="container">
+    <div class="center-strip">
+        <p>
+            Welcome to Configuration <span sec:authentication="name"></span>
+        </p>
+    </div>
+</div>
+<!--/*/ <th:block th:include="fragments/footer :: footer"></th:block> /*/-->
+</body>
+</html>

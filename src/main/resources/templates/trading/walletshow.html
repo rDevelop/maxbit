@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head lang="en">
+    <!--/*/ <th:block th:include="fragments/inc-header :: head"></th:block> /*/-->
+    <title>MaxBit - Wallet</title>
+</head>
+<body onload="init('Wallet')">
+<!--/*/ <th:block th:include="fragments/navbar :: navbar"></th:block> /*/-->
+<div class="container">
+<div class="top-container">
+    <h5 th:text="${wallet.name}">name</h5>
+    <div>
+        <form class="form-horizontal">
+            <table class="table table-bordered">
+                <tr>
+                    <th>Currency</th>
+                    <th>Total Balance</th>
+                    <th>Available Balance</th>
+                </tr>
+                <tr th:each="balance : ${wallet.balances}">
+                    <td align="left" th:text="${balance.currency}">Currency</td>
+                    <td th:align="left" th:text="${balance.totalBalance}">Total Balance</td>
+                    <td align="left" th:text="${balance.availableBalance}">Available Balance</td>
+                </tr>
+                <tr>
+                    <td colspan="3"><a th:href="${'/trading/wallets/reset'}">Refresh Wallets</a></td>
+                </tr>
+            </table>
+        </form>
+    </div>
+</div>
+</div>
+<!--/*/ <th:block th:include="fragments/footer :: footer"></th:block> /*/-->
+</body>
+</html>

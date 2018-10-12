@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      lang="en">
+<head>
+    <!--/*/ <th:block th:include="fragments/inc-header :: head"></th:block> /*/-->
+    <!--<META HTTP-EQUIV="refresh" CONTENT="15"></META>-->
+    <title>MaxBit - Ticker</title>
+</head>
+<body onload="init('Ticker')">
+<!--/*/ <th:block th:include="fragments/navbar :: navbar"></th:block> /*/-->
+<div class="container">
+<div class="top-container">
+    <h5 th:text="${ticker.pair}">pair</h5>
+    <div>
+        <form class="form-horizontal">
+            <table class="table table-bordered">
+                <tr>
+                    <td>Last Price</td>
+                    <td th:text="${ticker.bid}">lastPrice</td>
+                </tr>
+            </table>
+        </form>
+    </div>
+</div>
+</div>
+<!--/*/ <th:block th:include="fragments/footer :: footer"></th:block> /*/-->
+</body>
+</html>

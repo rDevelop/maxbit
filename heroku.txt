@@ -1,0 +1,12 @@
+https://devcenter.heroku.com/articles/procfile
+
+
+git init .  // new
+git remote -a maxbit  // update
+heroku git:remote -a maxbit
+
+git add .
+git commit -m "Updating Maxbit: v2"
+heroku login
+heroku create maxbit
+git push heroku master

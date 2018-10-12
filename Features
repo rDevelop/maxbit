@@ -1,0 +1,52 @@
+
+Market Data 
+
+Get Ticker 
+Get ticker info for the specified market.
+Choices: XBTUSD XBTSGD XBTEUR
+
+Get Order Book 
+Get the full order book for the specified market.
+Choices: XBTUSD XBTSGD XBTEUR
+
+Get Recent Trades 
+Get recent trades for the specified market.
+Choices: XBTUSD XBTSGD XBTEUR
+
+Show
+Trading 
+
+Get All Wallets 
+Get information about all wallets in your account.
+
+New Wallet 
+Create a new wallet with the specified name.
+
+Get Wallet Balance 
+Get the balance information for a specific currency in a wallet.
+
+Get Trades 
+Get all trades for the specified wallet.
+
+Get Funding History 
+Funding History for the specified wallet.
+
+New Order 
+Place an order.
+
+Get Order 
+Get an order by id.
+
+Cancel Order 
+Cancel an open order.
+
+New Fiat Currency Withdrawal 
+
+New Cryptocurrency Withdrawal 
+Create a cryptocurrency withdrawal request.
+
+New Cryptocurrency Deposit 
+Request a deposit address to send cryptocurrency to.
+
+New Wallet Transfer 
+Transfer funds between wallets in your itBit account.

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      lang="en">
+<head>
+    <!--/*/ <th:block th:include="fragments/inc-header :: head"></th:block> /*/-->
+    <!--<META HTTP-EQUIV="refresh" CONTENT="15"></META>-->
+    <title>MaxBit - Ticker</title>
+</head>
+<body onload="init('Ticker')">
+<!--/*/ <th:block th:include="fragments/navbar :: navbar"></th:block> /*/-->
+<div class="container">
+<div class="top-container">
+
+
+    <div th:if="${not #lists.isEmpty(tickers)}">
+                <table class="table table-bordered">
+                    <tr>
+                        <td>Ticker</td>
+                        <td>Last Price</td>
+
+                    </tr>
+                    <tr th:each="ticker : ${tickers}">
+                        <td th:text="${ticker.pair}">Pair</td>
+                        <td th:text="${ticker.lastPrice}">lastPrice</td>
+                    </tr>
+                </table>
+    </div>
+</div>
+</div>
+<!--/*/ <th:block th:include="fragments/footer :: footer"></th:block> /*/-->
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head lang="en">
+    <!--/*/ <th:block th:include="fragments/inc-header :: head"></th:block> /*/-->
+    <title>MaxBit - Response Error</title>
+</head>
+<body onload="init('Error')">
+<!--/*/ <th:block th:include="fragments/navbar :: navbar"></th:block> /*/-->
+<div class="container">
+<div class="top-container">
+    <h5 th:text="${reason}">code</h5>
+    <div>
+        <form class="form-horizontal">
+            <table class="table table-bordered">
+                <tr>
+                    <td th:text="${responseError.code + ' : ' + responseError.description}">description</td>
+                </tr>
+                <tr>
+                     <td class="text-muted" th:text="' request id : ' + ${responseError.requestId}">Request Id</td>
+                </tr>
+            </table>
+            <div th:if="${responseError.validationErrors != null and not #lists.isEmpty(responseError.validationErrors)}">
+                <table th:align="center" class="table table-bordered">
+                    <tr th:each="error : ${responseError.validationErrors}">
+                    <tr>
+                        <td th:text="${error.field + ' : ' + error.description}">description</td>
+                    </tr>
+                    <tr>
+                    <td class="text-muted" th:text="' error code : ' + ${responseError.code}">Error Code</td>
+                    </tr>
+                    </tr>
+                </table>
+            </div>
+        </form>
+    </div>
+</div>
+</div>
+<!--/*/ <th:block th:include="fragments/footer :: footer"></th:block> /*/-->
+</body>
+</html>

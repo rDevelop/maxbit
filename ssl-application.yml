@@ -1,0 +1,22 @@
+server:
+  port: 8443
+  session.timeout: 30
+  ssl:
+    key-store: keystore.p12
+    key-store-password: tomcat
+    keyStoreType: PKCS12
+    keyAlias: tomcat
+    ## alias/pass = tomcat
+
+logging:
+logging:
+  level:
+    root: WARN
+    org.springframework.web: INFO
+    org.springframework.security: INFO
+
+  file: logs/views.log
+
+spring:
+  thymeleaf:
+    cache: false

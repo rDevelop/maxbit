@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      lang="en">
+<head>
+    <!--/*/ <th:block th:include="fragments/inc-header :: head"></th:block> /*/-->
+    <title>MaxBit - Order Book</title>
+</head>
+<body onload="init('Order Book')">
+<!--/*/ <th:block th:include="fragments/navbar :: navbar"></th:block> /*/-->
+<div class="container">
+    <div class="top-container">
+        <div class="row center">
+            <div class="col-md-5">
+                <h5 th:text="${orderBook.ticker}">Ticker</h5>
+
+                <table id="Bids"
+                       class="table table-bordered"
+                       th:if="${orderBook != null and not #lists.isEmpty(orderBook.itBitBids)}">
+                    <thead>
+                    <tr class="center middle">
+                        <th th:colspan="2">Bids</th>
+                    </tr>
+                    <tr class="center middle">
+                        <th>Price</th>
+                        <th>Quantity</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr th:each="bid : ${orderBook.itBitBids}">
+                        <!--<td class="center middle" th:text="${rowStat.count}">1</td>-->
+                        <td th:text="${bid.price}">Price</td>
+                        <td th:text="${bid.quantity}">Quantity</td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="col-md-5">
+                <h5 th:text="${orderBook.ticker}">Ticker</h5>
+
+                <table id="Asks"
+                       class="table table-bordered"
+                       th:if="${orderBook != null and not #lists.isEmpty(orderBook.itBitAsks)}">
+                    <thead>
+                    <tr class="center middle">
+                        <th th:colspan="2">Asks</th>
+                    </tr>
+                    <tr class="center middle">
+                        <th>Price</th>
+                        <th>Quantity</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr th:each="ask : ${orderBook.itBitAsks}">
+                        <td th:text="${ask.price}">Price</td>
+                        <td th:text="${ask.quantity}">Quantity</td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+<!--/*/ <th:block th:include="fragments/footer :: footer"></th:block> /*/-->
+</body>
+</html>

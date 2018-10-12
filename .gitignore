@@ -1,0 +1,14 @@
+.gradle/**
+gradle*
+.idea/**
+*.iml
+build/**
+gradle/**
+json/**
+logs/**
+out/**
+maxusers.ser
+.DS_Store
+keystore.p12
+
+application.yml

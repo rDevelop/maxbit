@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      lang="en">
+<head>
+    <!--/*/ <th:block th:include="fragments/inc-header :: head"></th:block> /*/-->
+    <title>MaxBit - Wallets</title>
+</head>
+<body onload="init('Wallets')">
+<!--/*/ <th:block th:include="fragments/navbar :: navbar"></th:block> /*/-->
+<div class="container">
+<div class="top-container">
+    <div th:if="${not #lists.isEmpty(wallets)}">
+        <table th:align="center" class="table table-bordered">
+            <tr th:each="wallet : ${wallets}">
+                <td th:text="${wallet.name}" th:align="left"><a href="//trading/${wallet.id}">Name</a></td>
+                <td th:align="left"><a th:href="${'/trading/wallets/' + wallet.id}">View</a></td>
+            </tr>
+        </table>
+    </div>
+</div>
+</div>
+<!--/*/ <th:block th:include="fragments/footer :: footer"></th:block> /*/-->
+</body>
+</html>
